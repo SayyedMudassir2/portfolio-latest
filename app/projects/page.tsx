@@ -3,11 +3,10 @@
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CardDescription, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 import { easeOut } from "framer-motion";
-import React from "react";
 
 interface Feature {
   text: string;
@@ -29,33 +28,22 @@ interface Project {
 const projects: Project[] = [
   {
     id: "1",
-    title: "AICareerMentor",
+    title: "School Management System",
     description:
-      "Built and deployed a full-stack AI-powered SaaS platform offering real-time career Q&A, resume analysis, roadmap generation, and cover-letter writing.",
+      "A complete school management system built as a final year project to streamline student, teacher, and administrative operations.",
     features: [
-      { text: "Orchestrated 4+ AI agents using Inngest for stepwise async workflows, reducing latency by 40%" },
-      { text: "Processed resumes via LangChain + ImageKit with 90%+ accuracy for actionable insights" },
-      { text: "Integrated Clerk authentication and Stripe billing for fully gated premium access via credits" },
-      { text: "Implemented UUID-based session tracking and persistent chat history using Neon PostgreSQL" },
-      { text: "Configured CI/CD with GitHub + Vercel and secure multi-environment setup" },
+      { text: "Student, faculty, and class management" },
+      { text: "Attendance tracking and performance records" },
+      { text: "Role-based authentication for admin, staff, and students" },
+      { text: "Centralized dashboard for school operations" },
+      { text: "Optimized database design for efficient data storage" },
     ],
-    image: "/images/aicareermentor.webp",
-    alt: "AICareerMentor",
-    tags: [
-      "Next.js",
-      "React",
-      "Tailwind CSS",
-      "Clerk",
-      "Stripe",
-      "Neon",
-      "Inngest",
-      "LangChain",
-      "React Flow",
-      "Vercel",
-    ],
-    link: "https://aicareermentor.vercel.app",
-    gradient: "from-blue-500 to-blue-700",
-    accentColor: "from-blue-500 to-blue-700",
+    image: "/images/school-management.webp",
+    alt: "School Management System",
+    tags: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
+    link: "https://schoolms.example.com",
+    gradient: "from-red-500 to-red-700",
+    accentColor: "from-red-500 to-red-700",
   },
 
   {
@@ -118,22 +106,33 @@ const projects: Project[] = [
 
   {
     id: "5",
-    title: "School Management System",
+    title: "AICareerMentor",
     description:
-      "A complete school management system built as a final year project to streamline student, teacher, and administrative operations.",
+      "Built and deployed a full-stack AI-powered SaaS platform offering real-time career Q&A, resume analysis, roadmap generation, and cover-letter writing.",
     features: [
-      { text: "Student, faculty, and class management" },
-      { text: "Attendance tracking and performance records" },
-      { text: "Role-based authentication for admin, staff, and students" },
-      { text: "Centralized dashboard for school operations" },
-      { text: "Optimized database design for efficient data storage" },
+      { text: "Orchestrated 4+ AI agents using Inngest for stepwise async workflows, reducing latency by 40%" },
+      { text: "Processed resumes via LangChain + ImageKit with 90%+ accuracy for actionable insights" },
+      { text: "Integrated Clerk authentication and Stripe billing for fully gated premium access via credits" },
+      { text: "Implemented UUID-based session tracking and persistent chat history using Neon PostgreSQL" },
+      { text: "Configured CI/CD with GitHub + Vercel and secure multi-environment setup" },
     ],
-    image: "/images/school-management.webp",
-    alt: "School Management System",
-    tags: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
-    link: "https://schoolms.example.com",
-    gradient: "from-red-500 to-red-700",
-    accentColor: "from-red-500 to-red-700",
+    image: "/images/aicareermentor.webp",
+    alt: "AICareerMentor",
+    tags: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Clerk",
+      "Stripe",
+      "Neon",
+      "Inngest",
+      "LangChain",
+      "React Flow",
+      "Vercel",
+    ],
+    link: "https://aicareermentor.vercel.app",
+    gradient: "from-blue-500 to-blue-700",
+    accentColor: "from-blue-500 to-blue-700",
   },
 
   {
