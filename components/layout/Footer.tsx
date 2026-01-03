@@ -69,7 +69,8 @@ export default function Footer() {
             </h2>
 
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-8 max-w-xs">
-              Creating web solutions that balance elegance and reliability perfectly.
+              Creating web solutions that balance elegance and reliability
+              perfectly.
             </p>
 
             {/* Social Icons */}
@@ -115,7 +116,7 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-              </nav>
+            </nav>
 
             {/* Featured Projects */}
             <nav aria-labelledby="footer-nav-projects">
@@ -126,24 +127,25 @@ export default function Footer() {
                 Projects
               </h3>
               <ul className="space-y-3 text-sm">
-  {projectLinks.map(({ href, label }) => (
-    <li key={href}>
-      <Link
-        href={href}
-        className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors duration-200"
-      >
-        {label.length > 17 ? label.slice(0, 17) + "..." : label}
-      </Link>
-    </li>
-  ))}
-</ul>
+                {projectLinks.map(({ href, label }) => (
+                  <li key={href}>
+                    <Link
+                      href={href}
+                      className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors duration-200"
+                    >
+                      {label.length > 17 ? label.slice(0, 17) + "..." : label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </nav>
           </div>
 
           {/* Right: Contact Information */}
           <div>
             <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-8 max-w-sm">
-              I&apos;m open to freelance projects, full-time opportunities, or innovative collaborations.
+              I&apos;m open to freelance projects, full-time opportunities, or
+              innovative collaborations.
               <br />
               Let&apos;s create something amazing together.
             </p>
@@ -155,7 +157,10 @@ export default function Footer() {
                 className="group flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200"
               >
                 <div className="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg group-hover:bg-indigo-200 dark:group-hover:bg-indigo-900/50 transition-colors">
-                  <FaEnvelope size={18} className="text-indigo-600 dark:text-indigo-400" />
+                  <FaEnvelope
+                    size={18}
+                    className="text-indigo-600 dark:text-indigo-400"
+                  />
                 </div>
                 <span className="font-medium underline-offset-4 group-hover:underline">
                   {contact.email}
@@ -168,7 +173,10 @@ export default function Footer() {
                 className="group flex items-center gap-3 text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-200"
               >
                 <div className="p-2 bg-indigo-100 dark:bg-indigo-900/30 rounded-lg group-hover:bg-indigo-200 dark:group-hover:bg-indigo-900/50 transition-colors">
-                  <FaPhone size={18} className="text-indigo-600 dark:text-indigo-400" />
+                  <FaPhone
+                    size={18}
+                    className="text-indigo-600 dark:text-indigo-400"
+                  />
                 </div>
                 <span className="font-medium underline-offset-4 group-hover:underline">
                   {contact.phone}
@@ -195,7 +203,7 @@ export default function Footer() {
             </a>{" "}
             | All rights reserved |{" "}
             <a
-              href="https://github.com/SayyedMudassir2/portfolio" // Update with actual repo if available
+              href="https://github.com/SayyedMudassir2/portfolio-latest"
               target="_blank"
               rel="noopener noreferrer"
               className="font-semibold hover:text-gray-900 dark:hover:text-white transition-colors"
@@ -205,8 +213,9 @@ export default function Footer() {
           </p>
 
           <p className="text-gray-500 dark:text-gray-400">
-            Built with React & Next.js (App Router + Server Actions), TypeScript, Tailwind CSS,
-            Framer Motion, EmailJS, React Toaster, React Vertical Timeline — deployed on Vercel.
+            Built with React & Next.js (App Router + Server Actions),
+            TypeScript, Tailwind CSS, Framer Motion, EmailJS, React Toaster,
+            React Vertical Timeline — deployed on Vercel.
           </p>
         </div>
       </div>
