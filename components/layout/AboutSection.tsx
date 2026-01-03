@@ -66,7 +66,7 @@ export default function AboutSection() {
           animation-play-state: paused;
         }
       `}</style>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 mx-auto max-w-7xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-4 mx-auto max-w-7xl">
         {/* Tech Enthusiast Card */}
         <Card className="group relative overflow-hidden rounded-xl border border-gray-200/50 dark:border-zinc-800/50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm shadow-lg dark:shadow-xl transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl hover:border-purple-200/50 dark:hover:border-zinc-700 h-full p-6">
           <CardHeader className="pb-2">
@@ -78,7 +78,7 @@ export default function AboutSection() {
             </CardDescription>
           </CardHeader>
           <CardContent className="mt-4 flex-1 relative">
-            <div className="relative flex w-full h-full items-center justify-center overflow-hidden">
+            <div className="relative flex w-full h-full items-center justify-center overflow-hidden aspect-square">
               <IconCloud />
             </div>
           </CardContent>
@@ -123,14 +123,14 @@ export default function AboutSection() {
             </CardDescription>
           </CardHeader>
           <CardContent className="mt-4 flex-1 relative">
-            <div className="relative flex w-full h-full items-center justify-center overflow-hidden">
+            <div className="relative flex w-full h-full items-center justify-center overflow-hidden aspect-square">
               <Earth />
             </div>
           </CardContent>
         </Card>
 
         {/* Behind the Scenes Card - Full Width */}
-        <Card className="group relative overflow-hidden rounded-xl border border-gray-200/50 dark:border-zinc-800/50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm shadow-lg dark:shadow-xl transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl hover:border-purple-200/50 dark:hover:border-zinc-700 lg:col-span-3 h-full p-6">
+        <Card className="group relative overflow-hidden rounded-xl border border-gray-200/50 dark:border-zinc-800/50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-sm shadow-lg dark:shadow-xl transition-all duration-300 hover:shadow-xl dark:hover:shadow-2xl hover:border-purple-200/50 dark:hover:border-zinc-700 md:col-span-2 lg:col-span-3 h-full p-6">
           <CardHeader className="pb-2">
             <CardTitle className="text-gray-600 dark:text-zinc-400 text-sm font-medium mb-1">
               Behind the scenes

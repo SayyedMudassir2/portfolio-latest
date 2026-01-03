@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useMemo, useState } from "react";
 import { Cloud, renderSimpleIcon } from "react-icon-cloud";
 import {
   siHtml5,
@@ -11,52 +12,74 @@ import {
   siNodedotjs,
   siGit,
   siTailwindcss,
+  siMongodb,
+  siExpress,
+  siPython,
+  siPostman,
+  siFigma,
+  siVercel,
+  siGithub,
+  siFirebase,
+  siNpm,
+  siShadcnui,
   SimpleIcon,
 } from "simple-icons";
 
-const importedIcons: SimpleIcon[] = [
-  siHtml5,
-  siCss,
-  siJavascript,
-  siTypescript,
-  siReact,
-  siNextdotjs,
-  siNodedotjs,
-  siGit,
-  siTailwindcss,
-];
-
-const icons = importedIcons.map((icon) =>
-  renderSimpleIcon({
-    icon,
-    size: 42,
-    aProps: {
-      onClick: (e: React.MouseEvent<HTMLAnchorElement>) => e.preventDefault(),
-    },
-  })
-);
+const useIcons = () => {
+  return useMemo(() => {
+    const importedIcons: SimpleIcon[] = [
+      siHtml5,
+      siCss,
+      siJavascript,
+      siTypescript,
+      siReact,
+      siNextdotjs,
+      siNodedotjs,
+      siGit,
+      siTailwindcss,
+      siMongodb,
+      siExpress,
+      siPython,
+      siPostman,
+      siFigma,
+      siVercel,
+      siGithub,
+      siFirebase,
+      siNpm,
+      siShadcnui,
+    ];
+    return importedIcons.map((icon) =>
+      renderSimpleIcon({
+        icon,
+        size: 42,
+        aProps: {
+          onClick: (e: React.MouseEvent<HTMLAnchorElement>) =>
+            e.preventDefault(),
+        },
+      })
+    );
+  }, []);
+};
 
 const IconCloud: React.FC = () => {
-  return (
-    <Cloud>
-      {icons}
+  const [isMounted, setIsMounted] = useState(false);
+  const icons = useIcons();
 
-      <a>hello world</a>
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
-      <a
-        href="https://emojipedia.org/globe-showing-americas/"
-        target="_blank"
-        rel="noopener"
-      >
-        <img
-          height={42}
-          width={42}
-          alt="A globe"
-          src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/240/apple/285/globe-showing-americas_1f30e.png"
-        />
-      </a>
-    </Cloud>
-  );
+  if (!isMounted) {
+    return null;
+  }
+
+  const cloudProps = {
+    options: {
+      wheelZoom: false,
+    },
+  };
+
+  return <Cloud {...cloudProps}>{icons}</Cloud>;
 };
 
 export default IconCloud;

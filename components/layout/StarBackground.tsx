@@ -1,9 +1,18 @@
 "use client";
 
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef, useState } from "react";
+
+interface Star {
+  x: number;
+  y: number;
+  size: number;
+  duration: number;
+  delay: number;
+}
 
 export default function StarBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [stars, setStars] = useState<Star[][]>([]);
 
   // Mouse parallax effect
   useEffect(() => {
@@ -18,17 +27,22 @@ export default function StarBackground() {
   }, []);
 
   // Pre-generate star positions for each layer
-  const starLayers = useMemo(() => {
-    return [...Array(3)].map((_, layerIndex) => {
-      return [...Array(60)].map(() => {
-        const x = Math.random() * 100;
-        const y = Math.random() * 100;
-        const size = Math.random() * 3 + (layerIndex === 0 ? 0.5 : layerIndex === 1 ? 1.2 : 2);
-        const duration = Math.random() * 5 + 3;
-        const delay = Math.random() * 6;
-        return { x, y, size, duration, delay };
+  useEffect(() => {
+    const generateStars = () => {
+      return [...Array(3)].map((_, layerIndex) => {
+        return [...Array(60)].map(() => {
+          const x = Math.random() * 100;
+          const y = Math.random() * 100;
+          const size =
+            Math.random() * 3 +
+            (layerIndex === 0 ? 0.5 : layerIndex === 1 ? 1.2 : 2);
+          const duration = Math.random() * 5 + 3;
+          const delay = Math.random() * 6;
+          return { x, y, size, duration, delay };
+        });
       });
-    });
+    };
+    setStars(generateStars());
   }, []);
 
   return (
@@ -48,7 +62,7 @@ export default function StarBackground() {
       </div>
 
       {/* Drifting star layers */}
-      {starLayers.map((stars, layerIndex) => (
+      {stars.map((starLayer, layerIndex) => (
         <div
           key={layerIndex}
           className="absolute inset-0"
@@ -61,7 +75,7 @@ export default function StarBackground() {
             animationDelay: "0s",
           }}
         >
-          {stars.map((star, i) => (
+          {starLayer.map((star, i) => (
             <div
               key={i}
               className="absolute rounded-full bg-black dark:bg-white"
@@ -70,7 +84,9 @@ export default function StarBackground() {
                 height: `${star.size}px`,
                 top: `${star.y}%`,
                 left: `${star.x}%`,
-                boxShadow: `0 0 ${star.size * 4}px rgba(0,0,0,0.5) dark:rgba(255,255,255,0.9)`,
+                boxShadow: `0 0 ${
+                  star.size * 4
+                }px rgba(0,0,0,0.5) dark:rgba(255,255,255,0.9)`,
                 animationName: "twinkle",
                 animationDuration: `${star.duration}s`,
                 animationTimingFunction: "ease-in-out",
@@ -107,22 +123,49 @@ export default function StarBackground() {
       {/* CSS Animations */}
       <style jsx>{`
         @keyframes drift {
-          from { transform: translate(0, 0); }
-          to { transform: translate(120px, 80px); }
+          from {
+            transform: translate(0, 0);
+          }
+          to {
+            transform: translate(120px, 80px);
+          }
         }
         @keyframes twinkle {
-          0%, 100% { opacity: 0.4; transform: scale(1); }
-          50% { opacity: 1; transform: scale(1.6); }
+          0%,
+          100% {
+            opacity: 0.4;
+            transform: scale(1);
+          }
+          50% {
+            opacity: 1;
+            transform: scale(1.6);
+          }
         }
         @keyframes shootingStar {
-          0% { transform: translateX(0) translateY(0); opacity: 0; }
-          8% { opacity: 1; }
-          20% { opacity: 1; }
-          28% { opacity: 0; }
-          100% { transform: translateX(220vw) translateY(220vh); opacity: 0; }
+          0% {
+            transform: translateX(0) translateY(0);
+            opacity: 0;
+          }
+          8% {
+            opacity: 1;
+          }
+          20% {
+            opacity: 1;
+          }
+          28% {
+            opacity: 0;
+          }
+          100% {
+            transform: translateX(220vw) translateY(220vh);
+            opacity: 0;
+          }
         }
-        .animation-delay-2000 { animation-delay: 2s; }
-        .animation-delay-4000 { animation-delay: 4s; }
+        .animation-delay-2000 {
+          animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+          animation-delay: 4s;
+        }
       `}</style>
     </div>
   );

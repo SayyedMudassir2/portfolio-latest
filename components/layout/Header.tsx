@@ -28,7 +28,7 @@ export default function Hero() {
           </h1>
 
           {/* Introduction */}
-          <div className="mt-8 mb-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-100">
+          <div className="mt-6 mb-6 sm:mt-8 sm:mb-8 flex flex-col sm:flex-row items-center justify-center gap-4 text-lg md:text-xl font-semibold text-gray-800 dark:text-gray-100">
             <span>Hello, I&apos;m</span>
             <span className="inline-block -skew-x-12 bg-purple-700 px-5 py-2 text-white rounded-md shadow-lg">
               Sayyed Mudassir
@@ -74,17 +74,17 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
             <Link
               href="contact"
-              className="group flex items-center gap-3 rounded-full bg-purple-600 hover:bg-purple-700 px-8 py-3.5 text-white font-semibold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg w-full sm:w-auto justify-center"
+              className="group flex items-center gap-3 rounded-full bg-purple-600 hover:bg-purple-700 px-6 py-3 sm:px-8 sm:py-3.5 text-white font-semibold text-base sm:text-lg transition-all hover:scale-105 active:scale-95 shadow-lg w-full sm:w-auto justify-center"
             >
               <span>Let's Connect</span>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1.5" />
             </Link>
 
             <Link
-              href="/resume.pdf"
+              href="/Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-3 rounded-full bg-white text-purple-600 hover:bg-purple-50 border-2 border-purple-600 hover:border-purple-700 px-8 py-3.5 font-semibold text-lg transition-all hover:scale-105 active:scale-95 shadow-lg w-full sm:w-auto justify-center"
+              className="group flex items-center gap-3 rounded-full bg-white text-purple-600 hover:bg-purple-50 border-2 border-purple-600 hover:border-purple-700 px-6 py-3 sm:px-8 sm:py-3.5 font-semibold text-base sm:text-lg transition-all hover:scale-105 active:scale-95 shadow-lg w-full sm:w-auto justify-center"
             >
               <span>My Resume</span>
               <Download className="h-5 w-5 transition-transform group-hover:translate-x-1.5" />

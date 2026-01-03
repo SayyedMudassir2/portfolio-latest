@@ -128,7 +128,7 @@ export default function Footer() {
               </h3>
               <ul className="space-y-3 text-sm">
                 {projectLinks.map(({ href, label }) => (
-                  <li key={href}>
+                  <li key={label}>
                     <Link
                       href={href}
                       className="text-gray-600 dark:text-gray-400 hover:text-indigo-600 dark:hover:text-indigo-400 font-medium transition-colors duration-200"

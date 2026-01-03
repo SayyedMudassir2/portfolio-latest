@@ -112,33 +112,31 @@ const Modal: React.FC<{ service: Service | null; onClose: () => void }> = ({ ser
         onClick={onClose}
       >
         <motion.div
-          className="relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border border-gray-200/50 dark:border-gray-800/50 rounded-3xl max-w-md w-full max-h-[90vh] overflow-y-auto"
+          className="relative bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border border-gray-200/50 dark:border-gray-800/50 rounded-3xl max-w-md w-full max-h-[90vh] overflow-y-auto p-6 sm:p-8"
           initial={{ scale: 0.9, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
           onClick={(e) => e.stopPropagation()}
         >
-          <div className="p-6">
-            <div className="flex justify-between items-start mb-4">
-              <div className="flex items-center gap-3">
-                <div className="p-2 rounded-2xl bg-purple-500/5">
-                  {service.icon}
-                </div>
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white">{service.title}</h2>
+          <div className="flex justify-between items-start mb-4">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-2xl bg-purple-500/5">
+                {service.icon}
               </div>
-              <button
-                onClick={onClose}
-                className="p-1 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-colors"
-                aria-label="Close modal"
-              >
-                <X className="h-5 w-5 text-gray-500 dark:text-gray-400" />
-              </button>
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white">{service.title}</h2>
             </div>
-            <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">{service.description}</p>
-            <div className="border-t border-gray-200/50 dark:border-gray-800/50 pt-6">
-              <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide">Details</h3>
-              <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">{service.details}</p>
-            </div>
+            <button
+              onClick={onClose}
+              className="p-1 rounded-lg hover:bg-gray-100/50 dark:hover:bg-gray-800/50 transition-colors"
+              aria-label="Close modal"
+            >
+              <X className="h-5 w-5 text-gray-500 dark:text-gray-400" />
+            </button>
+          </div>
+          <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">{service.description}</p>
+          <div className="border-t border-gray-200/50 dark:border-gray-800/50 pt-6">
+            <h3 className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-3 uppercase tracking-wide">Details</h3>
+            <p className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed whitespace-pre-line">{service.details}</p>
           </div>
         </motion.div>
       </motion.div>
@@ -158,7 +156,7 @@ export default function ServicesSection() {
   };
 
   return (
-    <section className="bg-gray-50 dark:bg-[#0f001a] py-16 md:py-20 px-4 md:px-8">
+    <section className="bg-gray-50 dark:bg-[#0f001a] py-16 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-20">
           <motion.h2
@@ -171,7 +169,7 @@ export default function ServicesSection() {
             Where design meets functionality.
           </motion.h2>
           <motion.div
-            className="text-3xl md:text-5xl lg:text-6xl font-bold"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -183,7 +181,7 @@ export default function ServicesSection() {
             </span>
           </motion.div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <ServiceCard
               key={index}

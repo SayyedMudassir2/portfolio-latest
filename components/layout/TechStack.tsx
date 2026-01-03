@@ -36,7 +36,7 @@ const techStack: TechItem[] = [
 
 export default function TechStack() {
   return (
-    <section className="bg-gray-50 dark:bg-[#0f001a] py-16 md:py-20 px-4 md:px-8">
+    <section className="bg-gray-50 dark:bg-[#0f001a] py-16 md:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 md:mb-20">
           <motion.h2
@@ -49,7 +49,7 @@ export default function TechStack() {
             Progress over perfection.
           </motion.h2>
           <motion.div
-            className="text-3xl md:text-5xl lg:text-6xl font-bold"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -61,7 +61,7 @@ export default function TechStack() {
             </span>
           </motion.div>
         </div>
-        <div className="flex flex-wrap justify-center md:justify-start items-center gap-3 md:gap-4 lg:gap-6">
+        <div className="flex flex-wrap justify-center items-center gap-3 sm:gap-4 md:gap-5 lg:gap-6">
           {techStack.map((tech, index) => (
             <motion.div
               key={tech.name}
@@ -72,7 +72,7 @@ export default function TechStack() {
               transition={{ duration: 0.5, delay: index * 0.05 }}
               whileHover={{ scale: 1.05, y: -2 }}
             >
-              <span className="w-4 h-4 flex items-center justify-center shrink-0">
+              <span className="w-4 h-4 sm:w-5 sm:h-5 flex items-center justify-center shrink-0">
                 <Image
                   src={tech.icon}
                   alt={tech.alt}
@@ -81,7 +81,7 @@ export default function TechStack() {
                   className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-200"
                 />
               </span>
-              <span className="text-xs md:text-sm font-medium text-gray-900 dark:text-zinc-100 whitespace-nowrap">
+              <span className="text-xs sm:text-sm font-medium text-gray-900 dark:text-zinc-100 whitespace-nowrap">
                 {tech.name}
               </span>
             </motion.div>
