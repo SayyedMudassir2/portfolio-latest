@@ -1,0 +1,104 @@
+{
+  "appName": "Personal Portfolio",
+  "appType": "Portfolio Website",
+  "tagline": "A personal portfolio website of Sayyed Mudassir.",
+  "title": "Personal Portfolio of Sayyed Mudassir",
+  "description": "A modern, multi-language-ready personal portfolio showcasing the work, skills, and projects of Sayyed Mudassir.",
+  "locale": "en_US",
+  "language": "en-US",
+  "domain": "",
+  "canonicalPath": "/",
+  "applicationCategory": "WebApplication",
+  "audience": "Recruiters, Developers, Employers",
+  "keywords": ["portfolio", "Software Engineer", "developer portfolio", "sayyed mudassir", "nextjs", "personal website"],
+  "features": ["Multi-language Support", "Clean UI", "Responsive Design"],
+
+  "languages": {
+    "supported": ["en", "bn", "ar"],
+    "default": "en",
+    "locales": {
+      "en": {
+        "code": "en",
+        "name": "English",
+        "nativeName": "English",
+        "locale": "en_US",
+        "direction": "ltr"
+      },
+      "bn": {
+        "code": "bn",
+        "name": "Bengali",
+        "nativeName": "বাংলা",
+        "locale": "bn_BD",
+        "direction": "ltr"
+      },
+      "ar": {
+        "code": "ar",
+        "name": "Arabic",
+        "nativeName": "العربية",
+        "locale": "ar_SA",
+        "direction": "rtl"
+      }
+    }
+  },
+
+  "organization": {
+    "name": "",
+    "legalName": "",
+    "url": "",
+    "logo": "/logo.png",
+    "description": "",
+    "foundingDate": "",
+    "email": "",
+    "phone": "",
+    "address": {
+      "street": "",
+      "city": "",
+      "region": "",
+      "postalCode": "",
+      "country": "",
+      "countryCode": ""
+    }
+  },
+
+  "contact": {
+    "supportEmail": "",
+    "salesEmail": "",
+    "phoneNumber": ""
+  },
+
+  "social": {
+    "facebook": "https://www.facebook.com/sayyedmudassir443",
+    "twitter": "https://twitter.com/SayedMudasir443",
+    "linkedin": "https://www.linkedin.com/in/sayyedmudassir/",
+    "instagram": "https://www.instagram.com/sayyedmudassir_/",
+    "youtube": "",
+    "github": "https://github.com/SayyedMudassir2"
+  },
+
+  "images": {
+    "og": "/og-image.png",
+    "logo": "/logo.png",
+    "ogWidth": 1200,
+    "ogHeight": 630
+  },
+
+  "icons": {
+    "favicon": "/favicon.ico",
+    "svg": "/icon.svg",
+    "appleTouchIcon": "/apple-touch-icon.png"
+  },
+
+  "theme": {
+    "dark": "#000000",
+    "light": "#ffffff"
+  },
+
+  "pricing": {
+    "model": "",
+    "currency": "",
+    "minPrice": "",
+    "maxPrice": ""
+  },
+
+  "manifest": "/manifest.json"
+}
